@@ -1,3 +1,8 @@
+# This code loads the nii files and saves them in to types: 1- all 3 views in one figure; 2) all individual slices in specified folders.
+# Written by Azam Hamidinekoo, Aberystwyth University, 2019
+#-------------------------------------------------------------------------------------------------------
+
+
 import numpy as np
 import matplotlib.pyplot as plt
 import nibabel as nib
