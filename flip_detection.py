@@ -55,7 +55,7 @@ data_array = np.zeros((N, 256, 256, 1))
 
 image_files = glob('dataset/*.jpg')
 N = len(image_files)
-% print(N)
+print(N)
 
 # iterate through all of the image files
 for i, file in enumerate(image_files):
