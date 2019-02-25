@@ -1,4 +1,4 @@
-# https://colab.research.google.com/github/akeshavan/IntroDL/blob/master/IntroToKeras.ipynb#scrollTo=ZCR5NALKsm1o
+# reference to : https://colab.research.google.com/github/akeshavan/IntroDL/blob/master/IntroToKeras.ipynb#scrollTo=ZCR5NALKsm1o
 # *********************************************************************************************************
 # 0. Required libraries
 # *********************************************************************************************************
