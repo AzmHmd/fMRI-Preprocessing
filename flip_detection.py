@@ -1,10 +1,11 @@
-# reference to : https://colab.research.google.com/github/akeshavan/IntroDL/blob/master/IntroToKeras.ipynb#scrollTo=ZCR5NALKsm1o
+# https://colab.research.google.com/github/akeshavan/IntroDL/blob/master/IntroToKeras.ipynb#scrollTo=ZCR5NALKsm1o
 # *********************************************************************************************************
 # 0. Required libraries
 # *********************************************************************************************************
 import numpy as np
 import matplotlib
 matplotlib.use('Agg')
+from glob import glob
 import matplotlib.pyplot as plt
 from keras.utils import to_categorical
 import tensorflow as tf
@@ -25,7 +26,7 @@ def load_image(filename):
 def view_slice(data, index):
     plt.imshow(data[index,:,:,0],cmap=plt.cm.Greys_r)
     plt.axis('off');
-    plt.savefig('/results/viewSlice_'+str(index)+'.png')
+    plt.savefig('./results/viewSlice_'+str(index)+'.png')
     
 def get_figure():
     fig, ax = plt.subplots(1)
@@ -45,17 +46,17 @@ def show_activation(layer_name):
         plt.subplot(1,8,i+1)
         plt.imshow(this_hidden[0,:,:,i], plt.cm.Greys_r)
         plt.axis('off')
-    plt.savefig('/results/show_activation_'+layer_name+'.png')
+    plt.savefig('./results/show_activation_'+layer_name+'.png')
     return
 # *********************************************************************************************************
 # 2. Loading and viewing data
 # *********************************************************************************************************
-# initialize an array that is the required shape:
-data_array = np.zeros((N, 256, 256, 1)) 
-
 image_files = glob('dataset/*.jpg')
 N = len(image_files)
 print(N)
+
+# initialize an array that is the required shape:
+data_array = np.zeros((N, 256, 256, 1))
 
 # iterate through all of the image files
 for i, file in enumerate(image_files):
@@ -162,7 +163,7 @@ ax.plot(epoch, fit.history['acc'], marker="o", linewidth=2, color="steelblue", l
 ax.plot(epoch, fit.history['loss'], marker="o", linewidth=2, color="orange", label="loss")
 ax.set_xlabel('epoch')
 ax.legend(frameon=False);
-plt.savefig('/results/training_process.png')
+plt.savefig('./results/training_process.png')
 # *********************************************************************************************************
 # 8. Visualizing middle levels
 # *********************************************************************************************************
